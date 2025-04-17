@@ -7,14 +7,14 @@ import { FramedGlassPlane } from './FramedGlassPlane';
 const planeRotation = [0, THREE.MathUtils.degToRad(10), 0];
 
 const config = {
-    xOffset: 0.3,      
+    xOffset: 1.5,      
     yOffset: 0.8,     
     zOffset: -1.5,     
     planeWidth: 4,    
     planeHeight: 3    
 };
 
-export function ImageRail({ imageUrls = [] }) {
+export function ImageRail({ imageUrls = [],isDragging }) {
     const groupRef = useRef();
     const scrollData = useScroll();
     const meshRefs = useRef([]);
@@ -71,6 +71,7 @@ export function ImageRail({ imageUrls = [] }) {
                     textureUrl={item.imageUrl} 
                     targetUrl={item.targetUrl}
                     args={[config.planeWidth, config.planeHeight]}
+                    isDragging={isDragging}
                     />
                 );
             })}

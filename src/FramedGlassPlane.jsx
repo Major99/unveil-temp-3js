@@ -13,6 +13,7 @@ export const FramedGlassPlane = forwardRef(({
     frameBorder = 0.1,
     frameColor = '#333333',
     frameProps = {},
+    isDragging,
     ...props
 }, ref) => {
 
@@ -36,12 +37,13 @@ export const FramedGlassPlane = forwardRef(({
     frameControls.transparent = frameControls.opacity < 1;
 
     const [isHovered, setIsHovered] = useState(false);
-    useCursor(isHovered);
+    useCursor(isHovered && !isDragging);
 
     const hoverSlideX = 1.5;
     const hoverSlideZ = 0.1; 
     const { hoverPosition } = useSpring({
-        hoverPosition: isHovered ? [hoverSlideX, 0, hoverSlideZ] : [0, 0, 0],
+        hoverPosition: isHovered && !isDragging  ? [hoverSlideX, 0, hoverSlideZ] : [0, 0, 0],
+        scale: isDragging ? 0.8 : (isHovered ? 1.08 : 1),
         config: { mass: 0.5, tension: 250, friction: 30 } 
     });
 
@@ -61,7 +63,7 @@ export const FramedGlassPlane = forwardRef(({
             position={position}
             rotation={rotation}
             {...props}
-            onPointerOver={(e) => { e.stopPropagation(); setIsHovered(true); }}
+            onPointerOver={(e) => { e.stopPropagation(); !isDragging && setIsHovered(true); }}
             // eslint-disable-next-line no-unused-vars
             onPointerOut={(e) => setIsHovered(false)}
             onClick={handleClick} 
