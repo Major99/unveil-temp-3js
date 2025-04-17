@@ -1,0 +1,46 @@
+# Node dependencies
+node_modules/
+
+# Build output (Vite default)
+dist/
+# Build output (Create React App default)
+build/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Environment variables
+.env
+.env*.local
+.env.development.local
+.env.test.local
+.env.production.local
+# Exclude .env files but not .env.example (if you have one)
+!.env.example
+
+# IDE/Editor directories
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.sublime-project
+*.sublime-workspace
+.idea/
+
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# Test runner cache/output
+coverage/
+*.lcov
+
+# Vite cache
+.vite/
