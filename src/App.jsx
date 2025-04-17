@@ -32,7 +32,7 @@ const images = [
 const scrollPages = images.length / 2;
 
 const INITIAL_FOV = 40; 
-const DRAGGING_FOV = 50; 
+const DRAGGING_FOV = 60; 
 
 function SceneContent({ isDragging, setIsDragging }) {
   const camera = useThree(state => state.camera); 
@@ -80,7 +80,7 @@ function App() {
   useEffect(() => {
       console.log("App isDragging state:", isDragging);
   }, [isDragging]);
-  const initialCameraPosition = [4, 2, 8];
+  const initialCameraPosition = [1, 1, 10];
   return (
     <>
       <Canvas

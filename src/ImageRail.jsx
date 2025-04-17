@@ -4,12 +4,12 @@ import * as THREE from 'three';
 import { useFrame } from '@react-three/fiber';
 import { FramedGlassPlane } from './FramedGlassPlane';
 
-const planeRotation = [0, THREE.MathUtils.degToRad(10), 0];
+const planeRotation = [THREE.MathUtils.degToRad(10), -THREE.MathUtils.degToRad(30), -THREE.MathUtils.degToRad(5)];
 
 const config = {
     xOffset: 1.5,      
-    yOffset: 0.8,     
-    zOffset: -1.5,     
+    yOffset: 1.0,     
+    zOffset: -0.5,     
     planeWidth: 4,    
     planeHeight: 3    
 };

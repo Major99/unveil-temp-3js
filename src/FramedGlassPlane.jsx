@@ -11,7 +11,7 @@ export const FramedGlassPlane = forwardRef(({
     rotation,
     args = [4, 3],
     frameBorder = 0.1,
-    frameColor = '#333333',
+    frameColor = '#686868FF',
     frameProps = {},
     isDragging,
     ...props
