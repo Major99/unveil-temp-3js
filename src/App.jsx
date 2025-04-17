@@ -64,9 +64,9 @@ function SceneContent({ isDragging, setIsDragging }) {
         position={[5, 5, 10]}
         castShadow
       />
-      <DragController setIsDragging={setIsDragging} />
 
       <ScrollControls pages={scrollPages} damping={0.2}>
+      <DragController setIsDragging={setIsDragging} />
         <Suspense fallback={null}>
           <ImageRail imageUrls={images}  isDragging={isDragging} />
         </Suspense>
