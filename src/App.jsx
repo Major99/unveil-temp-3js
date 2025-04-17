@@ -40,7 +40,7 @@ function App() {
         <color attach="background" args={['white']} />
 
         <Suspense fallback={null}> 
-          <Environment files="/public/studio_small_03_4k.exr" background={false} /> 
+          <Environment files="/studio_small_03_4k.exr" background={false} /> 
         </Suspense>
 
         <ambientLight intensity={0.4} /> 
